@@ -1,0 +1,34 @@
+@import './base.css';
+
+#app {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  font-weight: normal;
+}
+
+a,
+.orange {
+  text-decoration: none;
+  color: #FF7A00;
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: #ffbd7f40;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+    display: flex;
+    place-items: center;
+
+    background-image: url('../assets/kyiv-1x.jpg'), linear-gradient(to top, #212121 20%, #2121210b 80%);
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-x: right;
+  }
+}

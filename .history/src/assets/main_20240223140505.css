@@ -1,0 +1,27 @@
+@import './base.css';
+
+#app {
+
+  margin: 0 auto;
+  font-weight: normal;
+}
+
+a,
+.orange {
+  text-decoration: none;
+  color: #FF7A00;
+  transition: 0.4s;
+  padding: 3px;
+}
+
+@media (hover: hover) {
+  a:hover {
+    background-color: #ffbd7f40;
+  }
+}
+
+@media (min-width: 1024px) {
+  body {
+   
+  }
+}

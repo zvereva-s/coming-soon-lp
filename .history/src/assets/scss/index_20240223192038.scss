@@ -1,0 +1,14 @@
+@import './reset';
+@import './variables';
+
+* {
+    box-sizing: border-box;
+
+    &::before,
+    &::after {
+        box-sizing: inherit;
+    }
+}
+body{
+    font-family: Manrope, Arial, Helvetica, sans-serif;
+}
