@@ -1,6 +1,7 @@
 <template>
   <div class="logo-wrapper">
     <a href="/" class="logo" :style="{ fontSize: fontSize + 'rem' }">VAL</a>
+    <p>Автозапчастини для Nissan & Infiniti</p>
   </div>
 </template>
 
@@ -21,9 +22,12 @@ export default {
 @import '../../../assets/scss/variables.scss';
 .logo-wrapper {
   text-align: center;
+
   min-width: 100px;
   padding-top: 1rem;
   margin: 0;
+  color: $primary-main-hover;
+  font-size: 0.6rem;
 }
 .logo {
   font-family: $raleway;

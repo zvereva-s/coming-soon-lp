@@ -68,22 +68,30 @@
     </div>
     <div class="wrapper--black">
       <Logo :fontSize="3" />
+      <AboutViewForm @submit="logger" />
     </div>
   </div>
 </template>
 
 <script>
 import Logo from '@/shared/components/UIComponents/Logo.vue'
+import AboutViewForm from './AboutViewForm/AboutViewForm.vue'
 export default {
   name: 'AboutView',
   components: {
-    Logo
+    Logo,
+    AboutViewForm
+  },
+  methods: {
+    logger(data) {
+      console.log('data', data)
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
-@import '../assets/scss/variables.scss';
+@import '../../assets/scss/variables.scss';
 
 .main-wrapper {
   height: 100vh;
@@ -113,11 +121,12 @@ export default {
   margin-bottom: 10rem;
   & a {
     text-decoration: none;
-    color: $primary-main-hover;
+    color: $white;
+
     font-size: 0.6rem;
 
     &:hover {
-      color: $white;
+      color: $primary-main-hover;
       transition: color $timeDelayNormal $cubic;
     }
   }

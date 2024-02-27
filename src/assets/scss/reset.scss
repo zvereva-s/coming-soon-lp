@@ -133,3 +133,14 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
+input:focus {
+
+    outline: none;
+    /* или border: none; */
+}
+
+button,
+input {
+    cursor: pointer;
+}

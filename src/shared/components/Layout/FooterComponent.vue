@@ -12,7 +12,7 @@
         </div>
         <div class="wrapper-contacts">
           <p class="wrapper-contacts__title">Залиште заявку на підбір автозапчастин</p>
-          <SocialLinks :links="['telegram', 'viber']" />
+          <CustomButton text="Підібрати запчастину" />
         </div>
       </div>
       <div class="wrapper-dev">
@@ -34,11 +34,14 @@
 <script>
 import SocialLinks from '@/shared/components/UIComponents/SocialLinks.vue'
 import ContainerComponent from '@/shared/components/UIComponents/Container.vue'
+import CustomButton from '@/shared/components/UIComponents/CustomButton.vue'
+
 export default {
   name: 'FooterComponent',
   components: {
     SocialLinks,
-    ContainerComponent
+    ContainerComponent,
+    CustomButton
   }
 }
 </script>
@@ -64,8 +67,8 @@ export default {
   justify-content: center;
 
   &__title {
-    color: $white-soft;
-    font-size: 0.8rem;
+    color: $white;
+    font-size: 0.6rem;
     margin-bottom: 10px;
   }
 }
@@ -77,7 +80,9 @@ export default {
   transform: translate(-50%, -50%);
 
   &__text {
-    color: $white;
+    font-family: Manrope;
+    font-weight: 100;
+    color: $white-mute;
     font-size: 0.6rem;
 
     &--link {

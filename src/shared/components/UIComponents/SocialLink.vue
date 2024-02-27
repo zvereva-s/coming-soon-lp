@@ -74,10 +74,10 @@ export default {
   display: block;
   width: 1.5rem;
   height: 1.5rem;
-  fill: $white;
+  fill: $primary-main-hover;
 
   &:hover {
-    fill: $primary-main-hover;
+    fill: $white;
     transition: fill $timeDelay $cubic;
   }
 }
