@@ -12,14 +12,7 @@
         </div>
         <div class="wrapper-contacts">
           <p class="wrapper-contacts__title">Залиште заявку на підбір автозапчастин</p>
-          <CustomButton text="Підібрати запчастину" @click="openForm = !openForm" />
-
-          <teleport to="#modals">
-            <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
-            ></Transition>
-          </teleport>
+          <CustomButton text="Підібрати запчастину" />
         </div>
       </div>
       <div class="wrapper-dev">
@@ -42,31 +35,13 @@
 import SocialLinks from '@/shared/components/UIComponents/SocialLinks.vue'
 import ContainerComponent from '@/shared/components/UIComponents/Container.vue'
 import CustomButton from '@/shared/components/UIComponents/CustomButton.vue'
-import ModalComponent from '@/shared/components/UIComponents/ModalComponent.vue'
-import AboutViewForm from '@/views/AboutView/AboutViewForm/AboutViewForm.vue'
 
 export default {
   name: 'FooterComponent',
   components: {
     SocialLinks,
     ContainerComponent,
-    CustomButton,
-    ModalComponent,
-    AboutViewForm
-  },
-  data() {
-    return {
-      openForm: false
-    }
-  },
-  methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
-      console.log('data', data)
-      return (this.openForm = false)
-    }
+    CustomButton
   }
 }
 </script>

@@ -16,7 +16,11 @@
 
           <teleport to="#modals">
             <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
+              <ModalComponent
+                :openForm="openForm"
+                @closeModal="handleOpenForm"
+                @keydown="handleKeydown"
+              >
                 <AboutViewForm @submit="handleSubmit" /> </ModalComponent
             ></Transition>
           </teleport>
@@ -61,11 +65,14 @@ export default {
   },
   methods: {
     handleOpenForm() {
-      return (this.openForm = false)
+      return (this.openForm = !this.openForm)
     },
     handleSubmit(data) {
       console.log('data', data)
       return (this.openForm = false)
+    },
+    handleKeyDown(e) {
+      console.log('e', e)
     }
   }
 }

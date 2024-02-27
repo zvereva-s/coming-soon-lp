@@ -101,6 +101,10 @@ export default {
   font-family: Manrope;
   text-align: center;
 
+  & input:hover {
+    background-color: $primary-main;
+  }
+
   &--active {
     background-color: $primary-main;
   }

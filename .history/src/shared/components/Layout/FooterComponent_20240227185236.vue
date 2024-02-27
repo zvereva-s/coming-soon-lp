@@ -61,11 +61,11 @@ export default {
   },
   methods: {
     handleOpenForm() {
-      return (this.openForm = false)
+      return (this.openForm = !this.openForm)
     },
     handleSubmit(data) {
       console.log('data', data)
-      return (this.openForm = false)
+      return (this.openForm = !this.openForm)
     }
   }
 }

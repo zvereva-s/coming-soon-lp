@@ -123,14 +123,6 @@ export default {
     color: $divider-dark-2;
     font-weight: 200;
   }
-  &:hover {
-    outline: 0.6px solid $primary-main;
-    border: 0.6px solid $primary-main;
-    &::placeholder {
-      color: $white-mute;
-      font-weight: 200;
-    }
-  }
 
   &--active {
     outline: 0.6px solid $primary-main;

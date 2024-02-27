@@ -14,10 +14,9 @@
           <p class="wrapper-contacts__title">Залиште заявку на підбір автозапчастин</p>
           <CustomButton text="Підібрати запчастину" @click="openForm = !openForm" />
 
-          <teleport to="#modals">
-            <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
+          <teleport to="body">
+            <Transition name="slide-fade">
+              <ModalComponent v-if="openForm"> <AboutViewForm /> </ModalComponent
             ></Transition>
           </teleport>
         </div>
@@ -57,15 +56,6 @@ export default {
   data() {
     return {
       openForm: false
-    }
-  },
-  methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
-      console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }

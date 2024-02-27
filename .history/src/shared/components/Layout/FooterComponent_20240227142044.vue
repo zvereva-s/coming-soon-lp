@@ -13,13 +13,15 @@
         <div class="wrapper-contacts">
           <p class="wrapper-contacts__title">Залиште заявку на підбір автозапчастин</p>
           <CustomButton text="Підібрати запчастину" @click="openForm = !openForm" />
-
-          <teleport to="#modals">
+          
+            <teleport to="body">
             <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
-            ></Transition>
-          </teleport>
+              <ModalComponent v-if="openForm" @click="openForm = !openForm">
+                <AboutViewForm />
+              </ModalComponent>
+              <Transition> 
+              </teleport
+          >
         </div>
       </div>
       <div class="wrapper-dev">
@@ -57,15 +59,6 @@ export default {
   data() {
     return {
       openForm: false
-    }
-  },
-  methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
-      console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }
@@ -114,6 +107,15 @@ export default {
       link-style: none;
       color: $primary-main;
     }
+  }
+  .v-enter-active,
+  .v-leave-active {
+    transition: opacity 0.5s ease;
+  }
+
+  .v-enter-from,
+  .v-leave-to {
+    opacity: 0;
   }
 }
 </style>

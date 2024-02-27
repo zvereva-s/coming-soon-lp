@@ -130,6 +130,9 @@ export default {
       color: $white-mute;
       font-weight: 200;
     }
+    + .input-label {
+      background-color: $primary-main;
+    }
   }
 
   &--active {

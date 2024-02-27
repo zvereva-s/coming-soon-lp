@@ -16,8 +16,8 @@
 
           <teleport to="#modals">
             <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
+              <ModalComponent v-if="openForm" @click="openForm = !openForm">
+                <AboutViewForm /> </ModalComponent
             ></Transition>
           </teleport>
         </div>
@@ -60,12 +60,8 @@ export default {
     }
   },
   methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
-      console.log('data', data)
-      return (this.openForm = false)
+    closeModal() {
+      return !this.openForm
     }
   }
 }
