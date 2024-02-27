@@ -83,10 +83,10 @@ export default {
   position: absolute;
   top: 8px;
   right: 8px;
-  fill: $primary-main-hover;
+  fill: $white;
 
   &:hover {
-    fill: $primary-main;
+    fill: $primary-main-hover;
     transition: fill $timeDelayNormal $cubic;
   }
 }
