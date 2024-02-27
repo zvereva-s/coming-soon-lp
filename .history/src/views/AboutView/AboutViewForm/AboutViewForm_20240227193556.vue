@@ -1,7 +1,7 @@
 <template>
   <div class="form-wrapper">
     <p class="application">Залиште заявку на підбір автозапчастини</p>
-    <form class="form" @submit.prevent="handleSubmit">
+    <form class="form" @submit="handleSubmit">
       <CustomInput
         v-for="field in fields"
         :key="field.id"

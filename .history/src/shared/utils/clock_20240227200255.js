@@ -12,9 +12,9 @@ export function updateClock() {
   console.log('second * 6', second * 6)
 
   // // Поворачиваем стрелки
-  hourHand.style.transform = `rotate(${(hour % 12) * 30 + (minute / 60) * 30}deg) translate(0%, 0)`
-  minuteHand.style.transform = `rotate(${minute * 6}deg) translate(0%, 0)`
-  secondHand.style.transform = `rotate(${second * 6}deg) translate(0%, 0)`
+  // hourHand.style.transform = `rotate(${(hour % 12) * 30 + (minute / 60) * 30}deg) translate(-50%, -100%)`
+  // minuteHand.style.transform = `rotate(${minute * 6}deg) translate(-50%, -100%)`
+  // secondHand.style.transform = `rotate(${second * 6}deg) translate(-50%, -100%)`
 }
 
 // Обновляем время каждую секунду

@@ -1,7 +1,7 @@
 <template>
   <div class="form-wrapper">
     <p class="application">Залиште заявку на підбір автозапчастини</p>
-    <form class="form" @submit.prevent="handleSubmit">
+    <form class="form" @submit.prevent="handleSubmit(initialState)">
       <CustomInput
         v-for="field in fields"
         :key="field.id"
@@ -35,11 +35,10 @@ export default {
     }
   },
   methods: {
-    handleSubmit() {
-      this.$emit('submit', { ...this.initialState })
-      this.fields.forEach((field) => {
-        this.initialState[field.value] = ''
-      })
+    handleSubmit(data) {
+      console.log('data', data)
+      // this.$emit('submit', { ...this.initialState })
+      // this.initialState = { ...initialState }
     }
   }
 }

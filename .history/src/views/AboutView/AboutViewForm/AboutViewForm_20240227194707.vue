@@ -35,7 +35,8 @@ export default {
     }
   },
   methods: {
-    handleSubmit() {
+    handleSubmit(data) {
+      console.log('data form', data)
       this.$emit('submit', { ...this.initialState })
       this.fields.forEach((field) => {
         this.initialState[field.value] = ''

@@ -156,15 +156,15 @@ export default {
 }
 .hour-hand {
   width: 3px;
-  height: 65px;
-  top: 94px;
+  height: 3rem;
+  top: 109px;
   left: 50%;
   transform-origin: 50% 100%;
 }
 
 .minute-hand {
   width: 3px;
-  height: 8rem;
+  height: 10rem;
   top: 31px;
   left: 50%;
   transform-origin: 50% 100%;

@@ -35,11 +35,10 @@ export default {
     }
   },
   methods: {
-    handleSubmit() {
-      this.$emit('submit', { ...this.initialState })
-      this.fields.forEach((field) => {
-        this.initialState[field.value] = ''
-      })
+    handleSubmit(data) {
+      console.log('data', data)
+      // this.$emit('submit', { ...this.initialState })
+      // this.initialState = { ...initialState }
     }
   }
 }

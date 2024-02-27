@@ -157,7 +157,7 @@ export default {
 .hour-hand {
   width: 3px;
   height: 65px;
-  top: 94px;
+  top: 109px;
   left: 50%;
   transform-origin: 50% 100%;
 }

@@ -1,9 +1,9 @@
 <template>
-  <div class="clock" aria-label="clock">
-    <div class="hour-hand" aria-label="clock-hour-hand"></div>
-    <div class="minute-hand" aria-label="clock-minute-hand"></div>
-    <div class="second-hand" aria-label="clock-second-hand"></div>
-    <div class="dial" aria-label="">
+  <div class="clock">
+    <div class="hour-hand"></div>
+    <div class="minute-hand"></div>
+    <div class="second-hand"></div>
+    <div class="dial">
       <div class="hour hour1">
         <p>1</p>
       </div>
@@ -49,7 +49,8 @@ import { updateClock } from '@/shared/utils'
 export default {
   name: 'ClockComponent',
   mounted() {
-    updateClock()
+    // setInterval(updateClock, 1000)
+    // updateClock()
   }
 }
 </script>
@@ -154,20 +155,24 @@ export default {
   position: absolute;
   background-color: $white;
 }
+.second-hand {
+  background-color: red;
+}
 .hour-hand {
-  width: 3px;
-  height: 65px;
-  top: 94px;
+  width: 4px;
+  height: 50px;
+  top: 0;
   left: 50%;
   transform-origin: 50% 100%;
 }
 
 .minute-hand {
   width: 3px;
-  height: 8rem;
-  top: 31px;
-  left: 50%;
-  transform-origin: 50% 100%;
+    height: 8rem;
+    top: 31px;
+    left: 50%;
+    transform-origin: 50% 100%;
+}
 }
 
 .second-hand {

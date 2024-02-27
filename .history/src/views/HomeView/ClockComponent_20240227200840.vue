@@ -1,5 +1,6 @@
 <template>
   <div class="clock" aria-label="clock">
+    <div class="clock-center" aria-label="clock-center-point"></div>
     <div class="hour-hand" aria-label="clock-hour-hand"></div>
     <div class="minute-hand" aria-label="clock-minute-hand"></div>
     <div class="second-hand" aria-label="clock-second-hand"></div>
@@ -67,6 +68,17 @@ export default {
   height: 20rem;
   border: 0.2px solid $text-dark-2;
   border-radius: 50%;
+}
+.clock-center {
+  width: 2px;
+  height: 2px;
+  border-radius: 50%;
+  background-color: $white;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .dial {
@@ -155,9 +167,9 @@ export default {
   background-color: $white;
 }
 .hour-hand {
-  width: 3px;
-  height: 65px;
-  top: 94px;
+  width: 4px;
+  height: 50px;
+  top: 110px;
   left: 50%;
   transform-origin: 50% 100%;
 }
