@@ -1,0 +1,117 @@
+<template>
+  <div v-if="openForm" @keydown="handleKeydown">
+    <div class="overlay" @click="handleClick">
+      <div class="modal-context" @click.stop>
+        <button class="btn-close" type="button" @click="handleClick">
+          <CloseIcon />
+        </button>
+        <slot></slot>
+      </div>
+    </div>
+  </div>
+</template>
+
+<script>
+import CloseIcon from '@/shared/components/UIComponents/icons/closeIcon.vue'
+export default {
+  name: 'ModalComponent',
+  components: {
+    CloseIcon
+  },
+  props: {
+    openForm: Boolean
+  },
+  methods: {
+    handleClick() {
+      return this.$emit('closeModal')
+    },
+    handleKeyDown(e) {
+      if (e.key === 'Escape') {
+        this.handleClick()
+      }
+    }
+  },
+  mounted() {
+    document.addEventListener('keydown', this.handleKeyDown)
+  },
+  beforeUnmount() {
+    document.removeEventListener('keydown', this.handleKeyDown)
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+@import '../../../assets/scss/variables.scss';
+@import '../../../assets/scss/_mixins.scss';
+
+.overlay {
+  position: fixed;
+
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 10;
+
+  width: 100vw;
+  height: 100%;
+
+  display: flex;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+
+  background-color: #61300364;
+}
+.modal-context {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background-color: $black-mute;
+
+  @include mq(mobile-only) {
+    padding: 3rem;
+  }
+  @include mq(desktop) {
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    width: 600px;
+    height: auto;
+  }
+}
+.btn-close {
+  @include mq(desktop) {
+    display: block;
+    width: 24px;
+    padding: 0;
+    margin: 0;
+
+    border: none;
+    background-color: transparent;
+
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    fill: $primary-main-hover;
+
+    &:hover {
+      fill: $primary-main;
+      transition: fill $timeDelayNormal $cubic;
+    }
+  }
+}
+.v-enter-active,
+.v-leave-active {
+  transition: opacity $timeDelay $cubic;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
