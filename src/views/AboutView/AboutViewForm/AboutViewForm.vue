@@ -62,6 +62,8 @@ export default {
   font-size: 0.9rem;
   color: $white;
   text-align: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 
   @include mq(mobile) {
     margin-top: 2rem;
