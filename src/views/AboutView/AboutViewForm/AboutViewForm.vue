@@ -9,6 +9,8 @@
         :label="field.label"
         :placeholder="field.placeholder"
         :required="field.required"
+        :pattern="field.pattern"
+        :mask="field.mask"
       />
       <CustomButton type="submit" :text="'Надіслати заявку'" :padding="'16px'" />
     </form>
