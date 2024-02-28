@@ -15,7 +15,9 @@ export const fields = [
     label: 'Номер телефону',
     value: 'phone',
     required: true,
-    autocomplete: true
+    autocomplete: true,
+    mask: '###-###-##-##',
+    pattern: ''
   },
   {
     id: 3,
