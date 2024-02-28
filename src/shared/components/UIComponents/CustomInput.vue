@@ -7,6 +7,7 @@
       class="input-field"
       :class="{ 'input-field--active': inputFocused }"
       v-model="value"
+      :pattern="pattern"
       :id="inputId"
       :type="type"
       :placeholder="placeholder"
@@ -43,6 +44,12 @@ export default {
     required: {
       type: Boolean,
       default: false
+    },
+    mask: {
+      type: String
+    },
+    pattern: {
+      type: String
     }
   },
   emits: ['update:modelValue'],
