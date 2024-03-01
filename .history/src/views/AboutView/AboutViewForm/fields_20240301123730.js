@@ -26,7 +26,7 @@ export const fields = [
     label: 'VIN',
     value: 'vinCode',
     required: false,
-    mask: '****** ****** *****',
+    mask: '## ## ## ## ## ## #####',
     autocomplete: true
   },
   {
@@ -36,7 +36,6 @@ export const fields = [
     label: 'Номер запчастини',
     value: 'sku',
     required: false,
-    mask: '*****-*****',
     autocomplete: true
   },
   {

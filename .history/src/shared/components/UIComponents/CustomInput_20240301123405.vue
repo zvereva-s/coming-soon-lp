@@ -124,7 +124,7 @@ export default {
   border-radius: 5px;
   border: 0.4px solid $primary-main-hover;
 
-  font-family: Manrope;
+  font-family: Raleway;
   font-size: 0.9rem;
   font-weight: 200;
   line-height: 1.5;

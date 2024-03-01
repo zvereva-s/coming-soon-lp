@@ -4,11 +4,11 @@
       >{{ label }}
     </label>
     <input
-      v-maska
-      :data-maska="mask"
       class="input-field"
       :class="{ 'input-field--active': inputFocused }"
       v-model="value"
+      v-maska
+      data-maska="#-#"
       :pattern="pattern"
       :id="inputId"
       :type="type"
@@ -71,6 +71,15 @@ export default {
       }
     }
   },
+  data() {
+    return {
+      inputFocused: false,
+      maskOptions: {
+        mask: '+38 0## ###-##-##',
+        eager: true
+      }
+    }
+  },
 
   methods: {
     handleInput(event) {
@@ -124,7 +133,7 @@ export default {
   border-radius: 5px;
   border: 0.4px solid $primary-main-hover;
 
-  font-family: Manrope;
+  font-family: Raleway;
   font-size: 0.9rem;
   font-weight: 200;
   line-height: 1.5;

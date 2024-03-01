@@ -36,7 +36,7 @@ export const fields = [
     label: 'Номер запчастини',
     value: 'sku',
     required: false,
-    mask: '*****-*****',
+    mask: '48070-JN00A',
     autocomplete: true
   },
   {
