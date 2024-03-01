@@ -49,12 +49,8 @@ export default {
     }
   },
   methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
+    logger(data) {
       console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }

@@ -23,9 +23,7 @@ export default {
     class: { type: String }
   },
   computed: {
-    computedClass() {
-      return `btn ${this.class}`
-    }
+    computedClass() {}
   }
 }
 </script>
@@ -56,20 +54,6 @@ export default {
   &:hover {
     background-color: $primary-main;
     color: $white;
-
-    transition:
-      background-color $timeDelay $cubic,
-      color $timeDelayNormal $cubic;
-  }
-}
-.inversion {
-  composes: btn;
-  background-color: $primary-main;
-  color: $white;
-
-  &:hover {
-    background-color: transparent;
-    color: $primary-main;
 
     transition:
       background-color $timeDelay $cubic,

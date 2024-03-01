@@ -7,55 +7,23 @@
           <p class="hero-title hero-title__first">Наш новий сайт</p>
           <p class="hero-title hero-title__second">скоро буде готовий</p>
         </div>
-        <div class="btn-wrapper">
-          <CustomButton
-            text="Перевірити наявність запчастини"
-            :padding="'15px'"
-            class="inversion"
-            @click="openForm = !openForm"
-          />
-          <teleport to="#modals">
-            <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
-            ></Transition>
-          </teleport>
-        </div>
+        <CustomButton text="Перевірити наявність запчастини" />
       </div>
     </main>
   </LayoutComponent>
 </template>
 
 <script>
-import AboutViewForm from '@/views/AboutView/AboutViewForm/AboutViewForm.vue'
-
 import LayoutComponent from '@/shared/components/Layout/LayoutComponent.vue'
 import ClockComponent from '@/views/HomeView/ClockComponent.vue'
 import CustomButton from '@/shared/components/UIComponents/CustomButton.vue'
-import ModalComponent from '@/shared/components/UIComponents/ModalComponent.vue'
 
 export default {
   name: 'HomeView',
   components: {
     LayoutComponent,
     ClockComponent,
-    CustomButton,
-    AboutViewForm,
-    ModalComponent
-  },
-  data() {
-    return {
-      openForm: false
-    }
-  },
-  methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
-      console.log('data', data)
-      return (this.openForm = false)
-    }
+    CustomButton
   }
 }
 </script>
@@ -146,17 +114,6 @@ export default {
       left: 50%;
       transform: translate(-50%, -50%);
     }
-  }
-}
-.btn-wrapper {
-  position: absolute;
-  bottom: 10px;
-  width: 90%;
-  left: 50%;
-  translate: (-50%);
-
-  @include mq(notDesktop) {
-    bottom: 150px;
   }
 }
 </style>

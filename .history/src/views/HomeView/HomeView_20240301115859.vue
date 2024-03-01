@@ -12,14 +12,8 @@
             text="Перевірити наявність запчастини"
             :padding="'15px'"
             class="inversion"
-            @click="openForm = !openForm"
+            @click="!openForm"
           />
-          <teleport to="#modals">
-            <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
-            ></Transition>
-          </teleport>
         </div>
       </div>
     </main>
@@ -32,7 +26,6 @@ import AboutViewForm from '@/views/AboutView/AboutViewForm/AboutViewForm.vue'
 import LayoutComponent from '@/shared/components/Layout/LayoutComponent.vue'
 import ClockComponent from '@/views/HomeView/ClockComponent.vue'
 import CustomButton from '@/shared/components/UIComponents/CustomButton.vue'
-import ModalComponent from '@/shared/components/UIComponents/ModalComponent.vue'
 
 export default {
   name: 'HomeView',
@@ -40,8 +33,7 @@ export default {
     LayoutComponent,
     ClockComponent,
     CustomButton,
-    AboutViewForm,
-    ModalComponent
+    AboutViewForm
   },
   data() {
     return {
@@ -49,12 +41,8 @@ export default {
     }
   },
   methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
+    logger(data) {
       console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }

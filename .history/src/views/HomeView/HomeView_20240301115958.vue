@@ -12,14 +12,8 @@
             text="Перевірити наявність запчастини"
             :padding="'15px'"
             class="inversion"
-            @click="openForm = !openForm"
+            @click="!openForm"
           />
-          <teleport to="#modals">
-            <Transition>
-              <ModalComponent :openForm="openForm" @closeModal="handleOpenForm">
-                <AboutViewForm @submit="handleSubmit" /> </ModalComponent
-            ></Transition>
-          </teleport>
         </div>
       </div>
     </main>
@@ -49,12 +43,8 @@ export default {
     }
   },
   methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
+    logger(data) {
       console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }

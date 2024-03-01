@@ -62,18 +62,4 @@ export default {
       color $timeDelayNormal $cubic;
   }
 }
-.inversion {
-  composes: btn;
-  background-color: $primary-main;
-  color: $white;
-
-  &:hover {
-    background-color: transparent;
-    color: $primary-main;
-
-    transition:
-      background-color $timeDelay $cubic,
-      color $timeDelayNormal $cubic;
-  }
-}
 </style>

@@ -1,6 +1,6 @@
 <template>
   <div class="btn-wrapper">
-    <button :class="computedClass" :type="type" :style="{ padding: padding }">{{ text }}</button>
+    <button class="`btn ${style}`" :type="type" :style="{ padding: padding }">{{ text }}</button>
     <slot></slot>
   </div>
 </template>
@@ -20,12 +20,7 @@ export default {
       type: String,
       default: '8px'
     },
-    class: { type: String }
-  },
-  computed: {
-    computedClass() {
-      return `btn ${this.class}`
-    }
+    style: { type: String }
   }
 }
 </script>
@@ -56,20 +51,6 @@ export default {
   &:hover {
     background-color: $primary-main;
     color: $white;
-
-    transition:
-      background-color $timeDelay $cubic,
-      color $timeDelayNormal $cubic;
-  }
-}
-.inversion {
-  composes: btn;
-  background-color: $primary-main;
-  color: $white;
-
-  &:hover {
-    background-color: transparent;
-    color: $primary-main;
 
     transition:
       background-color $timeDelay $cubic,

@@ -12,7 +12,7 @@
             text="Перевірити наявність запчастини"
             :padding="'15px'"
             class="inversion"
-            @click="openForm = !openForm"
+            @click="!openForm"
           />
           <teleport to="#modals">
             <Transition>
@@ -49,12 +49,8 @@ export default {
     }
   },
   methods: {
-    handleOpenForm() {
-      return (this.openForm = false)
-    },
-    handleSubmit(data) {
+    logger(data) {
       console.log('data', data)
-      return (this.openForm = false)
     }
   }
 }
