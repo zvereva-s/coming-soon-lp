@@ -46,11 +46,13 @@ export default {
       const requiredFields = this.fields.filter(({ required }) => required)
       console.log(
         'disabled',
-        requiredFields.map(({ value }) => !this.initialState[value]).some((value) => value === true)
+        requiredFields.map(({ value }) => !this.initialState[value].length > 3)?.some(true)
       )
-      return requiredFields
-        .map(({ value }) => !this.initialState[value])
-        .some((value) => value === true)
+      return (
+        requiredFields
+          .map(({ value }) => !this.initialState[value].length > 3)
+          ?.some((item) => item) || false
+      )
     }
   },
   methods: {

@@ -27,7 +27,7 @@ export default {
   },
   computed: {
     computedClass() {
-      return `btn ${this.class} ${this.disabled ? 'disabled' : ''}`
+      return `btn ${this.class}`
     }
   }
 }
@@ -64,9 +64,6 @@ export default {
       background-color $timeDelay $cubic,
       color $timeDelayNormal $cubic;
   }
-}
-.disabled {
-  display: none;
 }
 .inversion {
   composes: btn;

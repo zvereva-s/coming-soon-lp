@@ -12,12 +12,7 @@
         :pattern="field.pattern"
         :mask="field.mask"
       />
-      <CustomButton
-        type="submit"
-        :text="'Надіслати заявку'"
-        :padding="'16px'"
-        :disabled="disabled"
-      />
+      <CustomButton type="submit" :text="'Надіслати заявку'" :padding="'16px'" />
     </form>
   </div>
 </template>
@@ -38,19 +33,8 @@ export default {
   data() {
     return {
       initialState,
-      fields
-    }
-  },
-  computed: {
-    disabled() {
-      const requiredFields = this.fields.filter(({ required }) => required)
-      console.log(
-        'disabled',
-        requiredFields.map(({ value }) => !this.initialState[value]).some((value) => value === true)
-      )
-      return requiredFields
-        .map(({ value }) => !this.initialState[value])
-        .some((value) => value === true)
+      fields,
+      disabled
     }
   },
   methods: {

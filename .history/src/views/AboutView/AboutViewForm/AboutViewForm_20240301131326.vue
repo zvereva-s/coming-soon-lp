@@ -16,7 +16,7 @@
         type="submit"
         :text="'Надіслати заявку'"
         :padding="'16px'"
-        :disabled="disabled"
+        :disabled="handleDisabledSubmit()"
       />
     </form>
   </div>
@@ -46,11 +46,9 @@ export default {
       const requiredFields = this.fields.filter(({ required }) => required)
       console.log(
         'disabled',
-        requiredFields.map(({ value }) => !this.initialState[value]).some((value) => value === true)
+        requiredFields.map(({ value }) => this.initialState[value]).some((item) => item)
       )
-      return requiredFields
-        .map(({ value }) => !this.initialState[value])
-        .some((value) => value === true)
+      return requiredFields.map(({ value }) => this.initialState[value]).some((item) => item)
     }
   },
   methods: {

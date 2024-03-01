@@ -1,8 +1,6 @@
 <template>
   <div class="btn-wrapper">
-    <button :class="computedClass" :type="type" :style="{ padding: padding }" :disabled="disabled">
-      {{ text }}
-    </button>
+    <button :class="computedClass" :type="type" :style="{ padding: padding }">{{ text }}</button>
     <slot></slot>
   </div>
 </template>
@@ -11,7 +9,7 @@
 export default {
   name: 'CustomButton',
   props: {
-    disabled: { type: Boolean, default: false },
+    disabled: Boolean,
     type: {
       type: String,
       default: 'button'
@@ -27,7 +25,7 @@ export default {
   },
   computed: {
     computedClass() {
-      return `btn ${this.class} ${this.disabled ? 'disabled' : ''}`
+      return `btn ${this.class}`
     }
   }
 }
@@ -64,9 +62,6 @@ export default {
       background-color $timeDelay $cubic,
       color $timeDelayNormal $cubic;
   }
-}
-.disabled {
-  display: none;
 }
 .inversion {
   composes: btn;

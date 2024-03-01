@@ -66,7 +66,8 @@ export default {
   }
 }
 .disabled {
-  display: none;
+  composes: btn;
+  background-color: black;
 }
 .inversion {
   composes: btn;
